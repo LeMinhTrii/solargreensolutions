@@ -1,0 +1,232 @@
+/* Header - Web App Style */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background: rgba(255, 255, 255, 1);
+  border-bottom: 1px solid rgba(7, 136, 63, 0.1);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 10px 30px rgba(18, 45, 30, 0.05);
+}
+
+.header-inner {
+  position: relative;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+/* Logo */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  height: 70px;
+}
+
+.logo img {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transform: scale(0.6);
+}
+
+/* Desktop Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 999px;
+  background: rgba(246, 250, 247, 0.85);
+  border: 1px solid rgba(7, 136, 63, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  color: #334238;
+  font-size: 14px;
+  font-weight: 750;
+  white-space: nowrap;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav a:hover {
+  color: #07883f;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(18, 45, 30, 0.08);
+  transform: translateY(-1px);
+}
+
+.nav a.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #07883f, #35c76f);
+  box-shadow: 0 12px 26px rgba(7, 136, 63, 0.22);
+}
+
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(7, 136, 63, 0.16);
+  border-radius: 14px;
+  background: #ffffff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 10px 24px rgba(18, 45, 30, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.menu-toggle span {
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: #07883f;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(18, 45, 30, 0.12);
+}
+
+/* Tablet trở xuống */
+@media (max-width: 992px) {
+  .header-inner {
+    height: 76px;
+    gap: 16px;
+  }
+
+  .logo img {
+    width: 165px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 14px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(7, 136, 63, 0.12);
+    box-shadow: 0 22px 55px rgba(18, 45, 30, 0.14);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav a {
+    width: 100%;
+    min-height: 48px;
+    justify-content: flex-start;
+    padding: 0 16px;
+    border-radius: 14px;
+    font-size: 14px;
+    color: #24352a;
+    background: transparent;
+  }
+
+  .nav a:hover {
+    color: #07883f;
+    background: #eef8f2;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .site-header {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .header-inner {
+    height: 70px;
+  }
+
+  .logo img {
+    width: 148px;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+  }
+
+  .nav {
+    top: calc(100% + 10px);
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .nav a {
+    min-height: 46px;
+    font-size: 13.5px;
+  }
+}

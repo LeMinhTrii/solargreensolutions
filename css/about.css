@@ -1,0 +1,737 @@
+/* =========================
+   ABOUT COMPANY - WEB APP
+========================= */
+
+.company-about-page {
+  --about-primary: #07883f;
+  --about-primary-dark: #056b34;
+  --about-green-light: #35c76f;
+  --about-heading: #142019;
+  --about-text: #5f6e64;
+  --about-border: rgba(7, 136, 63, 0.12);
+  --about-background: #f5fbf7;
+  --about-shadow: 0 18px 48px rgba(18, 45, 30, 0.08);
+
+  overflow: hidden;
+  color: var(--about-heading);
+}
+
+/* Shared */
+.company-section-label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  border: 1px solid rgba(7, 136, 63, 0.14);
+  border-radius: 999px;
+  background: #e9f8ef;
+  color: var(--about-primary);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.company-section-heading {
+  max-width: 760px;
+  margin: 0 auto 46px;
+  text-align: center;
+}
+
+.company-section-heading h2,
+.company-introduction-content h2,
+.company-commitment-content h2 {
+  margin: 0 0 18px;
+  color: var(--about-heading);
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 900;
+  line-height: 1.17;
+  letter-spacing: -0.6px;
+}
+
+.company-section-heading p {
+  margin: 0 auto;
+  color: var(--about-text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.company-introduction-section {
+  position: relative;
+  padding: 100px 0;
+  background:
+    radial-gradient(circle at 5% 15%, rgba(7, 136, 63, 0.1), transparent 28%),
+    radial-gradient(
+      circle at 95% 85%,
+      rgba(53, 199, 111, 0.1),
+      transparent 26%
+    ),
+    linear-gradient(135deg, #f7fcf9 0%, #ffffff 50%, #effaf3 100%);
+}
+
+.company-introduction-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.company-introduction-image {
+  position: relative;
+  padding: 12px;
+  border: 1px solid var(--about-border);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--about-shadow);
+  backdrop-filter: blur(12px);
+}
+
+.company-introduction-image::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: -24px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(53, 199, 111, 0.16);
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+.company-introduction-image img {
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 32px;
+}
+
+.company-image-label {
+  position: absolute;
+  right: -20px;
+  bottom: 30px;
+  max-width: 260px;
+  padding: 17px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 20px;
+  background: rgba(7, 136, 63, 0.94);
+  box-shadow: 0 16px 36px rgba(7, 136, 63, 0.24);
+  backdrop-filter: blur(12px);
+}
+
+.company-image-label strong,
+.company-image-label span {
+  display: block;
+}
+
+.company-image-label strong {
+  margin-bottom: 4px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 850;
+}
+
+.company-image-label span {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.company-introduction-content h2 span {
+  color: var(--about-primary);
+}
+
+.company-introduction-content p {
+  margin: 0 0 15px;
+  color: var(--about-text);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.company-introduction-content .company-lead {
+  color: #334238;
+  font-size: 16.5px;
+  font-weight: 650;
+}
+
+/* Button */
+.company-about-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 10px;
+  padding: 0 22px;
+  /* border: 1px solid var(--about-primary); */
+  border-radius: 13px;
+  background: linear-gradient(
+    135deg,
+    var(--about-primary),
+    var(--about-green-light)
+  );
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 12px 26px rgba(7, 136, 63, 0.2);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.company-about-button:hover {
+  transform: translateY(-3px);
+  color: #fff;
+  box-shadow: 0 18px 34px rgba(7, 136, 63, 0.28);
+}
+
+/* =========================
+   CORE DIRECTION
+========================= */
+
+.company-direction-section {
+  position: relative;
+  padding: 94px 0;
+  background: #fff;
+}
+
+.company-direction-section::before {
+  content: "";
+  position: absolute;
+  top: 100px;
+  left: -140px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(7, 136, 63, 0.08);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.company-direction-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.company-direction-item {
+  position: relative;
+  min-width: 0;
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid var(--about-border);
+  border-radius: 32px;
+  background: #fff;
+  box-shadow: 0 14px 38px rgba(18, 45, 30, 0.06);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.company-direction-item::after {
+  content: "";
+  position: absolute;
+  right: -35px;
+  bottom: -35px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(53, 199, 111, 0.08);
+}
+
+.company-direction-item:hover {
+  transform: translateY(-6px);
+  border-color: rgba(7, 136, 63, 0.28);
+  box-shadow: 0 24px 50px rgba(18, 45, 30, 0.11);
+}
+
+.company-direction-item > span {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 24px;
+  place-items: center;
+  border-radius: 8px;
+  background: #e7f8ee;
+  color: var(--about-primary);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.company-direction-item h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 11px;
+  color: var(--about-heading);
+  font-size: 18px;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.company-direction-item p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--about-text);
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+
+/* =========================
+   MISSION AND VISION
+========================= */
+
+.company-purpose-section {
+  position: relative;
+  padding: 94px 0;
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(53, 199, 111, 0.11),
+      transparent 27%
+    ),
+    linear-gradient(180deg, #f3faf6 0%, #f9fcfa 100%);
+}
+
+.company-purpose-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.company-purpose-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  min-height: 330px;
+  padding: 38px;
+  border: 1px solid var(--about-border);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--about-shadow);
+}
+
+.company-purpose-card-green {
+  border-color: transparent;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255, 255, 255, 0.12),
+      transparent 34%
+    ),
+    linear-gradient(135deg, #056b34, #07883f);
+}
+
+.company-purpose-number {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 8px;
+  background: #e7f8ee;
+  color: var(--about-primary);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.company-purpose-card-green .company-purpose-number {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.company-purpose-label {
+  display: block;
+  margin-bottom: 17px;
+  color: var(--about-primary);
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.company-purpose-card h2 {
+  margin: 0 0 17px;
+  color: var(--about-heading);
+  font-size: clamp(25px, 3vw, 32px);
+  font-weight: 850;
+  line-height: 1.28;
+}
+
+.company-purpose-card p {
+  margin: 0;
+  color: var(--about-text);
+  font-size: 14.5px;
+  line-height: 1.85;
+}
+
+.company-purpose-card-green .company-purpose-label {
+  color: #8df0b2;
+}
+
+.company-purpose-card-green h2 {
+  color: #fff;
+}
+
+.company-purpose-card-green p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/* =========================
+   COMMITMENT
+========================= */
+
+.company-commitment-section {
+  position: relative;
+  padding: 100px 0;
+  background: #fff;
+}
+
+.company-commitment-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.9fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.company-commitment-content > p {
+  margin: 0 0 24px;
+  color: var(--about-text);
+  font-size: 15.5px;
+  line-height: 1.85;
+}
+
+.company-commitment-content ul {
+  display: grid;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.company-commitment-content li {
+  position: relative;
+  padding: 14px 16px 14px 48px;
+  border: 1px solid rgba(7, 136, 63, 0.1);
+  border-radius: 8px;
+  background: #f6fbf8;
+  color: #334238;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.company-commitment-content li::before {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--about-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  transform: translateY(-50%);
+}
+
+.company-commitment-image {
+  position: relative;
+  padding: 12px;
+  border: 1px solid var(--about-border);
+  border-radius: 32px;
+  background: #fff;
+  box-shadow: var(--about-shadow);
+}
+
+.company-commitment-image::after {
+  content: "Thi công an toàn · Vận hành ổn định";
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  padding: 10px 14px;
+  border-radius: 13px;
+  background: rgba(5, 81, 47, 0.9);
+  color: #fff;
+  font-size: 11.5px;
+  font-weight: 750;
+  backdrop-filter: blur(10px);
+}
+
+.company-commitment-image img {
+  display: block;
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 32px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.company-about-cta-section {
+  padding: 0 0 96px;
+  background:
+    radial-gradient(circle at 10% 50%, rgba(7, 136, 63, 0.08), transparent 25%),
+    #fff;
+}
+
+.company-about-cta {
+  position: relative;
+  padding: 64px 36px;
+  overflow: hidden;
+  border-radius: 32px;
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(255, 255, 255, 0.13),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #043d27 0%, #07883f 100%);
+  box-shadow: 0 24px 60px rgba(7, 87, 44, 0.2);
+  text-align: center;
+}
+
+.company-about-cta::before {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  left: -80px;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.company-about-cta > span {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 15px;
+  padding: 7px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #8df0b2;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.company-about-cta h2 {
+  position: relative;
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.company-about-cta p {
+  position: relative;
+  max-width: 690px;
+  margin: 0 auto 25px;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.company-about-cta-actions {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.company-about-cta .company-about-button {
+  margin: 0;
+  border-color: #fff;
+  background: #fff;
+  color: var(--about-primary-dark);
+  box-shadow: none;
+}
+
+.company-about-cta .button-outline {
+  border-color: rgba(255, 255, 255, 0.36);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+  .company-introduction-section,
+  .company-direction-section,
+  .company-purpose-section,
+  .company-commitment-section {
+    padding: 72px 0;
+  }
+
+  .company-introduction-grid,
+  .company-commitment-wrap {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .company-introduction-image {
+    max-width: 720px;
+  }
+
+  .company-introduction-image img {
+    height: 430px;
+  }
+
+  .company-image-label {
+    right: 24px;
+  }
+
+  .company-direction-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .company-purpose-card {
+    padding: 32px;
+  }
+
+  .company-commitment-image img {
+    height: 400px;
+  }
+}
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .company-purpose-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-purpose-card {
+    min-height: auto;
+  }
+
+  .company-section-heading {
+    margin-bottom: 36px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+  .company-introduction-section,
+  .company-direction-section,
+  .company-purpose-section,
+  .company-commitment-section {
+    padding: 58px 0;
+  }
+
+  .company-section-heading {
+    text-align: left;
+  }
+
+  .company-section-heading h2,
+  .company-introduction-content h2,
+  .company-commitment-content h2 {
+    font-size: 29px;
+  }
+
+  .company-introduction-image {
+    padding: 8px;
+  }
+
+  .company-introduction-image img {
+    height: 300px;
+  }
+
+  .company-image-label {
+    right: 16px;
+    bottom: 16px;
+    padding: 14px 16px;
+  }
+
+  .company-introduction-content p,
+  .company-commitment-content > p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .company-introduction-content .company-lead {
+    font-size: 15px;
+  }
+
+  .company-direction-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-direction-item {
+    padding: 24px;
+  }
+
+  .company-direction-item > span {
+    margin-bottom: 18px;
+  }
+
+  .company-purpose-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 26px 22px;
+  }
+
+  .company-purpose-card h2 {
+    font-size: 25px;
+  }
+
+  .company-commitment-content li {
+    padding-right: 12px;
+    font-size: 13.5px;
+  }
+
+  .company-commitment-image {
+    padding: 8px;
+  }
+
+  .company-commitment-image img {
+    height: 290px;
+  }
+
+  .company-commitment-image::after {
+    right: 16px;
+    bottom: 16px;
+    max-width: calc(100% - 32px);
+  }
+
+  .company-about-cta-section {
+    padding-bottom: 60px;
+  }
+
+  .company-about-cta {
+    padding: 44px 22px;
+  }
+
+  .company-about-cta h2 {
+    font-size: 29px;
+  }
+
+  .company-about-cta-actions {
+    flex-direction: column;
+  }
+
+  .company-about-cta-actions .company-about-button {
+    width: 100%;
+  }
+}

@@ -1,5 +1,5 @@
 (function () {
-  const API_URL = "https://solargreensolutions.vn/wp-json/wp/v2/posts";
+  const API_URL = "https://solar.natriion.com/wp-json/wp/v2/posts";
 
   const API_QUERY =
     "?per_page=12&orderby=date&order=desc&_embed=wp:featuredmedia,wp:term&_fields=id,slug,date,modified,link,title,excerpt,sticky,categories,_links,_embedded";

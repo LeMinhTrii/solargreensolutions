@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const PROJECT_API = window.location.hostname.includes(
-    "solargreensolutions.vn",
+    "solar.natriion.com",
   )
     ? "/wp-json/solar/v1/projects?per_page=10"
-    : "https://solargreensolutions.vn/wp-json/solar/v1/projects?per_page=10";
+    : "https://solar.natriion.com/wp-json/solar/v1/projects?per_page=10";
 
   const CACHE_KEY = "solar_projects_cache_v2";
 

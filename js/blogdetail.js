@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("slug");
 
-  const API_BASE = window.location.hostname.includes("solargreensolutions.vn")
+  const API_BASE = window.location.hostname.includes("solar.natriion.com")
     ? "/wp-json/wp/v2/posts"
-    : "https://solargreensolutions.vn/wp-json/wp/v2/posts";
+    : "https://solar.natriion.com/wp-json/wp/v2/posts";
 
   const CACHE_PREFIX = "sgs_news_detail_cache_v3_";
   const RELATED_CACHE_PREFIX = "sgs_news_related_cache_v3_";

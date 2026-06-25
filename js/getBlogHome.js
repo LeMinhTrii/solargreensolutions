@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const POSTS_API =
-    "https://solar.natriion.com/wp-json/wp/v2/posts?per_page=3&_embed=wp:featuredmedia,wp:term&_fields=id,slug,modified,link,title,excerpt,_links,_embedded";
+    "https://solar.natriion.com/index.php?rest_route=/wp/v2/posts&per_page=3&_embed=wp:featuredmedia,wp:term&_fields=id,slug,modified,link,title,excerpt,_links,_embedded";
 
   const CACHE_KEY = "solar_home_latest_posts_cache_v2";
 

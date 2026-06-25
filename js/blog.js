@@ -1,8 +1,12 @@
 (function () {
-  const API_URL = "https://solar.natriion.com/wp-json/wp/v2/posts";
+  // const API_URL = "https://solargreensolutions.vn/wp-json/wp/v2/posts";
+
+  // const API_QUERY =
+  //   "?per_page=12&orderby=date&order=desc&_embed=wp:featuredmedia,wp:term&_fields=id,slug,date,modified,link,title,excerpt,sticky,categories,_links,_embedded";
+  const API_URL = "https://solar.natriion.com/index.php";
 
   const API_QUERY =
-    "?per_page=12&orderby=date&order=desc&_embed=wp:featuredmedia,wp:term&_fields=id,slug,date,modified,link,title,excerpt,sticky,categories,_links,_embedded";
+    "?rest_route=/wp/v2/posts&per_page=12&orderby=date&order=desc&_embed=wp:featuredmedia,wp:term&_fields=id,slug,date,modified,link,title,excerpt,sticky,categories,featured_media,_links,_embedded";
   const CACHE_KEY = "sgs_blog_posts_cache_v1";
   const CACHE_TIME = 5 * 60 * 1000; // cache 5 phút
 

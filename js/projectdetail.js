@@ -2,9 +2,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("slug");
 
+  // const API_BASE = window.location.hostname.includes("solargreensolutions.vn")
+  //   ? "/wp-json/solar/v1/projects"
+  //   : "https://solargreensolutions.vn/wp-json/solar/v1/projects";
+
   const API_BASE = window.location.hostname.includes("solar.natriion.com")
-    ? "/wp-json/solar/v1/projects"
-    : "https://solar.natriion.com/wp-json/solar/v1/projects";
+    ? "/index.php?rest_route=/solar/v1/projects"
+    : "https://solar.natriion.com/index.php?rest_route=/solar/v1/projects";
 
   const CACHE_PREFIX = "solar_project_detail_cache_v2_";
 
@@ -283,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function () {
   async function fetchFreshProject() {
     const freshUrl =
       API_BASE +
-      "?slug=" +
+      "&slug=" +
       encodeURIComponent(slug) +
       "&_refresh=" +
       Date.now();

@@ -2,10 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get("slug");
 
+  //sửa API_BASE, DETAIL_FIELDS, LIST_FIELDS, fetchPostDetail, API_BASE + "?per_page=8 => API_BASE + "&per_page=8,
   const API_BASE = window.location.hostname.includes("solar.natriion.com")
-    ? "/wp-json/wp/v2/posts"
-    : "https://solar.natriion.com/wp-json/wp/v2/posts";
+    ? "/index.php?rest_route=/wp/v2/posts"
+    : "https://solar.natriion.com/index.php?rest_route=/wp/v2/posts";
 
+  const CACHE_KEY = "sgs_blog_posts_cache_v1";
   const CACHE_PREFIX = "sgs_news_detail_cache_v3_";
   const RELATED_CACHE_PREFIX = "sgs_news_related_cache_v3_";
   const CACHE_TIME = 5 * 60 * 1000;
@@ -444,11 +446,11 @@ document.addEventListener("DOMContentLoaded", function () {
   async function fetchPostDetail() {
     const url =
       API_BASE +
-      "?slug=" +
+      "&slug=" +
       encodeURIComponent(slug) +
       "&_embed=wp:featuredmedia,wp:term" +
       "&_fields=" +
-      DETAIL_FIELDS;
+      encodeURIComponent(DETAIL_FIELDS);
 
     const data = await fetchJSON(url, { cache: "no-store" });
 
@@ -462,7 +464,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (category.id) {
       const categoryUrl =
         API_BASE +
-        "?per_page=8&orderby=date&order=desc&exclude=" +
+        "&per_page=8&orderby=date&order=desc&exclude=" +
         encodeURIComponent(post.id) +
         "&categories=" +
         encodeURIComponent(category.id) +
@@ -480,7 +482,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const fallbackUrl =
         API_BASE +
-        "?per_page=8&orderby=date&order=desc&exclude=" +
+        "&per_page=8&orderby=date&order=desc&exclude=" +
         encodeURIComponent(excludeIds.join(",")) +
         "&_embed=wp:featuredmedia,wp:term" +
         "&_fields=" +
